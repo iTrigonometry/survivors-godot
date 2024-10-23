@@ -1,17 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://c742wc85uby2h"]
+[gd_scene load_steps=4 format=3 uid="uid://c742wc85uby2h"]
 
 [ext_resource type="PackedScene" uid="uid://bs8rc0g548wxn" path="res://player.tscn" id="1_knx0v"]
 [ext_resource type="PackedScene" uid="uid://ui5dbxrsnaxh" path="res://pine_tree.tscn" id="2_8vts6"]
+[ext_resource type="PackedScene" uid="uid://bung2wkktd2b7" path="res://mob.tscn" id="2_cj44d"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 offset_right = 683.0
 offset_bottom = 685.0
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_knx0v")]
+[node name="Player" parent="." instance=ExtResource("1_knx0v")]
 position = Vector2(136, 347)
+
+[node name="Mob" parent="." instance=ExtResource("2_cj44d")]
+position = Vector2(366, 228)
 
 [node name="Pine_tree" parent="." instance=ExtResource("2_8vts6")]
 position = Vector2(549, 426)
